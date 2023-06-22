@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../../M5stack"
+		},
+		{
+			"name": "HelloM5",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
