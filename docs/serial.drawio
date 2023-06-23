@@ -1,0 +1,25 @@
+<mxfile host="65bd71144e">
+    <diagram id="ZFkXBqungCCNLWARXFPu" name="ページ1">
+        <mxGraphModel dx="1229" dy="871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="ESP32" style="shadow=0;dashed=0;align=center;html=1;strokeWidth=1;shape=mxgraph.electrical.logic_gates.qfp_ic;labelNames=a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a1,b1,c1,d1,e1,f1,g1,h1,i1,j1,k1,l1,m1,n1;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="160" width="240" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&lt;span style=&quot;font-weight: bold; color: rgb(188, 192, 195); font-family: arial, sans-serif; font-size: 14px; text-align: left; background-color: rgb(32, 33, 36);&quot;&gt;CH9102&lt;br&gt;or&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(189, 193, 198); font-family: arial, sans-serif; font-size: 14px; text-align: left; background-color: rgb(32, 33, 36);&quot;&gt;CP2104&lt;/span&gt;&lt;span style=&quot;font-weight: bold; color: rgb(188, 192, 195); font-family: arial, sans-serif; font-size: 14px; text-align: left; background-color: rgb(32, 33, 36);&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="shadow=0;dashed=0;align=center;html=1;strokeWidth=1;shape=mxgraph.electrical.logic_gates.dual_inline_ic;labelNames=a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="180" width="100" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.pc;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="215" width="130" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="USB" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.calloutDoubleArrow;dy=10;dx=20;notch=24;arrowHead=10;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="255" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.twoWayArrow;dy=0.65;dx=22;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="260" width="90" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
