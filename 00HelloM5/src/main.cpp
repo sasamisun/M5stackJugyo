@@ -16,6 +16,7 @@ void setup() {
   M5.begin(cfg);                        // initialize M5 device
 
   M5.Display.setTextSize(3);            // change text size
+  M5.Display.setCursor(0, 0);
   M5.Display.print("Hello World!!!") ;  // display Hello World! and one line is displayed on the screen
   Serial.println("Hello World!!!") ;    // display Hello World! and one line on the serial monitor
   count = 0;                            // initialize count
