@@ -2,8 +2,8 @@
 #include <WiFi.h>
 
 //wifi接続設定
-const char* ssid = "relo-kaigi";
-const char* password = "relokaigi";
+const char* ssid = "ssid";
+const char* password = "password";
 
 void setup()
 {
