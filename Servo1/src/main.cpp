@@ -52,7 +52,7 @@ void loop() {
 
   if(M5.BtnB.wasPressed()){
     //500ミリ秒かけて90度まで動きます。
-    servo1.setEaseTo(40, 500);
+    servo1.setEaseTo(90, 500);
     servo2.setEaseTo(90, 500);
   }
   
