@@ -7,14 +7,26 @@ using namespace m5avatar;
 Avatar avatar;
 
 //二つのサーボモーターのピン番号をdefineしておきます。
-#define S1 2  //上下に動くサーボモーター
-#define S2 5  //左右に動くサーボモーター
-
-//サーボモーター2つ分のインスタンスを生成します。
-ServoEasing servo1;
-ServoEasing servo2;
+#define SERVO_PIN_X 5
+#define SERVO_PIN_Y 2
+#define START_DEGREE_VALUE_X 90
+#define START_DEGREE_VALUE_Y 90
+ServoEasing servo_x;
+ServoEasing servo_y;
 
 uint32_t count;
+
+void moveServo()
+{
+  int x = random(70, 110);
+  int y = random(75, 92);
+  int delay_time = random(600);
+  servo_x.setEaseToD(x, 400 + delay_time);
+  servo_y.setEaseToD(y, 400 + delay_time);
+  synchronizeAllServosStartAndWaitForAllServosToStop();
+  servo_y.setEaseToD(y + 2, 300 + delay_time); // サーボの鳴り防止
+  synchronizeAllServosStartAndWaitForAllServosToStop();
+}
 
 void setup() {
 
@@ -25,21 +37,19 @@ void setup() {
 
   // attach(int aPin, int aInitialDegreeOrMicrosecond, int aMicrosecondsForServo0Degree, int aMicrosecondsForServo180Degree)
   //ピン番号、初期角度、最低ON時間(マイクロ秒)、最長ON時間(マイクロ秒)を設定します。
-  servo1.attach(S1, 90, 500, 2400);
-  servo2.attach(S2, 90, 500, 2400);
-
-  //サーボモーターの動きがすべて終わるまで処理を停止します。
-  synchronizeAllServosStartAndWaitForAllServosToStop();
-
+  servo_x.attach(SERVO_PIN_X,
+                 START_DEGREE_VALUE_X,
+                 DEFAULT_MICROSECONDS_FOR_0_DEGREE,
+                 DEFAULT_MICROSECONDS_FOR_180_DEGREE);
+  servo_y.attach(SERVO_PIN_Y,
+                 START_DEGREE_VALUE_Y,
+                 DEFAULT_MICROSECONDS_FOR_0_DEGREE,
+                 DEFAULT_MICROSECONDS_FOR_180_DEGREE);
   //両方のサーボモーターにイージングを設定
-  servo1.setEasingType(EASE_CIRCULAR_OUT);
-  servo2.setEasingType(EASE_CIRCULAR_OUT);
-
-  //モーターの動作速度設定
-  setSpeedForAllServos(60);
-  
-
-
+  servo_x.setEasingType(EASE_QUADRATIC_IN_OUT);
+  servo_y.setEasingType(EASE_QUADRATIC_IN_OUT);
+  //モーターの動作速度設定。デフォルトを50度毎秒とします。
+  setSpeedForAllServos(50);
 }
 
 void loop() {
@@ -47,24 +57,25 @@ void loop() {
 
   
   if(M5.BtnA.wasPressed()){
-    servo1.setEaseTo(120, 500);
+    servo_y.setEaseTo(100, 500);
   }
 
   if(M5.BtnB.wasPressed()){
-    //500ミリ秒かけて90度まで動きます。
-    servo1.setEaseTo(90, 500);
-    servo2.setEaseTo(90, 500);
+    //90度まで動きます。速度は1秒につき20度の速さです。
+    servo_y.setEaseTo(90, 20);
+    servo_x.setEaseTo(90, 20);
   }
   
   if(M5.BtnC.wasPressed()){
     //首振り(スタート地点を90として、～160,～20,～90と動く)
-    servo2.setEaseTo(160, 1000);
+    servo_x.setEaseTo(160, 20);
     synchronizeAllServosStartAndWaitForAllServosToStop();
-    servo2.setEaseTo(20, 1500);
+    servo_x.setEaseTo(20, 20);
     synchronizeAllServosStartAndWaitForAllServosToStop();
-    servo2.setEaseTo(90, 1000);
+    servo_x.setEaseTo(90, 20);
   }
   //サーボモーターの動きがすべて終わるまで処理を停止します。
   synchronizeAllServosStartAndWaitForAllServosToStop();
+
 
 }
