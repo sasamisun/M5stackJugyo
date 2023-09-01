@@ -57,7 +57,7 @@ void loop() {
 
   
   if(M5.BtnA.wasPressed()){
-    servo_y.setEaseTo(100, 500);
+    servo_y.setEaseTo(100, 50);
   }
 
   if(M5.BtnB.wasPressed()){

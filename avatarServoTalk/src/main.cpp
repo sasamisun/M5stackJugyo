@@ -50,8 +50,8 @@ void setup()
   avatar.setFace(new BeraFace());
   avatar.init(); // start drawing
     avatar.setSpeechFont(&fonts::lgfxJapanGothic_12); //表示するフォントを指定(これをしないと日本語が表示されない)
-    TTS.play("yahho-", 90);                           // 「こんにちは」と速度80でいいます。
-    avatar.setSpeechText("やっぽー");                 //吹き出しを表示
+    //TTS.play("yahho-", 90);                           // 「こんにちは」と速度80でいいます。
+    //avatar.setSpeechText("やっぽー");                 //吹き出しを表示
     avatar.setMouthOpenRatio(0.7);                    //口をあける
     delay(2000);                                      //2秒まつ
     avatar.setMouthOpenRatio(0);                      //口を閉じる
